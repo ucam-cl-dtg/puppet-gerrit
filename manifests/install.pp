@@ -186,6 +186,9 @@ class gerrit::install (
 
   # service script installation
   case $::osfamily {
+    'Debian': {
+      $use_systemd = true
+    }
     'RedHat': {
       case $::operatingsystem {
         'Fedora': {
